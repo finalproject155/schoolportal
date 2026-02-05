@@ -17,7 +17,9 @@ import {
 import { NavMain } from "@/components/nav-main"
 // import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+// import { TeamSwitcher } from "@/components/team-switcher"
+import Image from "next/image"
+import logo from "@/assets/pngaaa.com-995389.png"
 import {
   Sidebar,
   SidebarContent,
@@ -33,23 +35,7 @@ const data = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
+ 
   navMain: [
     {
       title: "Dashboard",
@@ -104,7 +90,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        {/* <TeamSwitcher teams={data.teams} /> */}
+
+       <div className="flex flex-row items-center justify-center">
+         <Image src={ logo} alt="Logo" width={100} height={100} />
+       </div>
+
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
