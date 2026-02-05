@@ -39,8 +39,8 @@ export function NavMain({
                 className="px-5 py-7"
               >
                 <Link href={item.url}>
-                  {item.icon && <item.icon className=" text-green-600 " />}
-                  <span className="text-[20px] font-semibold ">{item.title}</span>
+                  {item.icon && <item.icon className=" text-primary " />}
+                  <span className=" font-light text-[16px] font-lex ">{item.title}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
