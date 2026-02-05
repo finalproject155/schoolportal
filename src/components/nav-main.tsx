@@ -23,6 +23,14 @@ export function NavMain({
 }) {
   const pathname = usePathname()
 
+  const isActiveClassLink = (path: any) => {
+    return pathname === path ? "bg-(--primary)" : ""
+  }
+
+  const isActiveClassIcon = (path: any) => {
+    return pathname === path ? "text-black" : "text-primary"
+  }
+
   return (
     <SidebarGroup>
       <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -35,11 +43,11 @@ export function NavMain({
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton
                 asChild
-                isActive={isActive}
-                className="px-5 py-7"
+                
+                className={`px-5 py-7`}
               >
-                <Link href={item.url}>
-                  {item.icon && <item.icon className=" text-primary " />}
+                <Link className={`${isActiveClassLink(item.url)} hover:bg-(--primary-hover) hover:text-white` } href={item.url}>
+                  {item.icon && <item.icon className={` ${isActiveClassIcon(item.url)} `} />}
                   <span className=" font-light text-[16px] font-lex ">{item.title}</span>
                 </Link>
               </SidebarMenuButton>
