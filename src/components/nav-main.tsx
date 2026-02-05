@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { type LucideIcon } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   SidebarGroup,
@@ -10,26 +10,26 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
 export function NavMain({
   items,
 }: {
   items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-  }[]
+    title: string;
+    url: string;
+    icon?: LucideIcon;
+  }[];
 }) {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   const isActiveClassLink = (path: any) => {
-    return pathname === path ? "bg-(--primary)" : ""
-  }
+    return pathname === path ? "bg-accent text-white" : "";
+  };
 
   const isActiveClassIcon = (path: any) => {
-    return pathname === path ? "text-black" : "text-primary"
-  }
+    return pathname === path ? "text-white" : "text-primary";
+  };
 
   return (
     <SidebarGroup>
@@ -37,24 +37,27 @@ export function NavMain({
 
       <SidebarMenu>
         {items.map((item) => {
-          const isActive = pathname === item.url
+          const isActive = pathname === item.url;
 
           return (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton
-                asChild
-                
-                className={`px-5 py-7`}
-              >
-                <Link className={`${isActiveClassLink(item.url)} hover:bg-(--primary-hover) hover:text-white` } href={item.url}>
-                  {item.icon && <item.icon className={` ${isActiveClassIcon(item.url)} `} />}
-                  <span className=" font-light text-[16px] font-lex ">{item.title}</span>
+              <SidebarMenuButton asChild className={`px-5 py-7`}>
+                <Link
+                  className={`${isActiveClassLink(item.url)} hover:bg-(--primary-hover) hover:text-white`}
+                  href={item.url}
+                >
+                  {item.icon && (
+                    <item.icon className={` ${isActiveClassIcon(item.url)} `} />
+                  )}
+                  <span className=" font-light text-[16px] font-lex">
+                    {item.title}
+                  </span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
-          )
+          );
         })}
       </SidebarMenu>
     </SidebarGroup>
-  )
+  );
 }
