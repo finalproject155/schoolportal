@@ -33,9 +33,9 @@ export function NavMain({
 
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      {/* <SidebarGroupLabel>Platform</SidebarGroupLabel> */}
 
-      <SidebarMenu>
+      <SidebarMenu className="py-10">
         {items.map((item) => {
           const isActive = pathname === item.url;
 
@@ -43,7 +43,7 @@ export function NavMain({
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton asChild className={`px-5 py-7`}>
                 <Link
-                  className={`${isActiveClassLink(item.url)} hover:bg-(--primary-hover) hover:text-white`}
+                  className={`${isActiveClassLink(item.url)} hover:bg-accent hover:text-white`}
                   href={item.url}
                 >
                   {item.icon && (
