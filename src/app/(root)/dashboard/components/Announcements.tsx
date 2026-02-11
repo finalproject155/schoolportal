@@ -9,7 +9,7 @@ export default function Announcements() {
 
   return (
     <div className="bg-white p-5 w-full rounded-lg shadow-sm border border-gray-100 mb-6 h-full">
-      <h2 className="text-lg font-bold text-gray-900 mb-4">Announcements</h2>
+      <h2 className="text-lg font-bold text-accent mb-4">Announcements</h2>
       <div className="space-y-4">
         {announcements.map((item, index) => (
           <div

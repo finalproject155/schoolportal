@@ -62,7 +62,7 @@ export function NavUser({
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
+            className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg text-white bg-accent"
             side={isMobile ? "bottom" : "right"}
             align="end"
             sideOffset={4}
@@ -82,24 +82,24 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
-                <Sparkles />
+                <Sparkles className="text-white" />
                 Profile
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
-                <BadgeCheck />
+                <BadgeCheck className="text-white"/>
                 Setting
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <Bell />
+                <Bell className="text-white" />
                 Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <LogOut />
+              <LogOut className="text-white" />
               Log out
             </DropdownMenuItem>
           </DropdownMenuContent>
