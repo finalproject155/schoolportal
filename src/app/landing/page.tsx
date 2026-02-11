@@ -10,7 +10,7 @@ export default function page() {
         <Hero />
         <Explore />
         <Exploreimage  />
-        <Years />
+        <Years />   
     </div>
   )
 }
