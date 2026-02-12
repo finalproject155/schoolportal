@@ -3,22 +3,22 @@ import React from "react";
 export default function UpcomingDeadlines() {
   const deadlines = [
     {
-      month: "APR",
-      day: "05",
+      month: "JAN",
+      day: "22",
       title: "Tuition Fee Payment",
       subtitle: "Finance Office",
       color: "bg-red-50 text-red-600",
     },
     {
-      month: "APR",
-      day: "12",
+      month: "JAN",
+      day: "24",
       title: "CS-201 Project Proposal",
       subtitle: "Due by 11:59 PM",
       color: "bg-yellow-50 text-yellow-600",
     },
     {
-      month: "APR",
-      day: "18",
+      month: "JAN",
+      day: "31",
       title: "Course Registration Closes",
       subtitle: "Registrar's Office",
       color: "bg-green-50 text-green-600",
