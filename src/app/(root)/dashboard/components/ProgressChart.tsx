@@ -4,7 +4,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export function ProgressChart() {
-  const [progress, setProgress] = React.useState(10);
+  const [progress, setProgress] = React.useState(1);
 
   React.useEffect(() => {
     const timer = setTimeout(() => setProgress(75), 500);
@@ -13,6 +13,7 @@ export function ProgressChart() {
 
   const size = 150;
   const strokeWidth = 15;
+  const innerStroke = 8;
   const center = size / 2;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
@@ -29,7 +30,7 @@ export function ProgressChart() {
         {/* Background circle */}
         <circle
           className="text-gray-200 stroke-current"
-          strokeWidth={strokeWidth}
+          strokeWidth={innerStroke}
           fill="transparent"
           r={radius}
           cx={center}
