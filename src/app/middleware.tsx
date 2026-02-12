@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
 
   // If user NOT logged in → redirect to /login
   if (!loggedIn) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    return NextResponse.redirect(new URL("/landing", request.url));
   }
 
   // Allow access if logged in

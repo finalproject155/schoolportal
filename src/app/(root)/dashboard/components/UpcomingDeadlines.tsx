@@ -27,7 +27,7 @@ export default function UpcomingDeadlines() {
 
   return (
     <div className="bg-white p-5 rounded-lg w-full shadow-sm border border-gray-100 h-full">
-      <h2 className="text-lg font-bold text-gray-900 mb-4">
+      <h2 className="text-lg font-bold text-accent mb-4">
         Upcoming Deadlines
       </h2>
       <div className="space-y-4">
