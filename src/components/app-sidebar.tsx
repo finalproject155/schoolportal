@@ -63,7 +63,7 @@ const data = {
 
       {
       title: "Fees",
-      url: "#",
+      url: "/fees",
       icon: ReceiptText,
     },
 
