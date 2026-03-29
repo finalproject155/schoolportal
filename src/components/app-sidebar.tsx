@@ -46,7 +46,7 @@ const data = {
 
       {
       title: "Course",
-      url: "#",
+      url: "/course",
       icon: BookOpen,
     },
 
