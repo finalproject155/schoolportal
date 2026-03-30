@@ -1,14 +1,43 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import lautech from "@/assets/lau.jpg";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/pngaaa.com-995389.png";
+import { useLoginMutation } from "@/hooks/queries/useLoginMutation";
 
 
 
 export default function login() {
+  const router = useRouter();
+  const [message, setMessage] = useState("");
+  const loginMutation = useLoginMutation();
+
+  async function handleLogin(e) {
+    e.preventDefault();
+    setMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const matric = String(formData.get("matric") || "");
+    const password = String(formData.get("password") || "");
+
+    try {
+      await loginMutation.mutateAsync({
+        payload: { matric, password },
+        queryParams: { source: "web" },
+      });
+      setMessage("✅ Login successful");
+      router.push("/dashboard");
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "Login failed";
+      setMessage(`❌ ${message}`);
+      return;
+    }
+  }
 
 
   return (
@@ -35,6 +64,7 @@ export default function login() {
 
           
           <form
+            onSubmit={handleLogin}
             className="w-full flex flex-col gap-10"
           >
             <label>
@@ -43,6 +73,7 @@ export default function login() {
               </p>
               <Input
                 type="text"
+                name="matric"
                 required
               />
             </label>
@@ -56,14 +87,17 @@ export default function login() {
               </div>
               <Input
                 type="password"
+                name="password"
                 required
               />
             </label>
 
+            {message && <p className="text-sm font-medium text-accent">{message}</p>}
 
 
-            <Button className="bg-accent hover:bg-accent/90 text-white py-6 rounded-lg">
-            LOGIN
+
+            <Button disabled={loginMutation.isPending} className="bg-accent hover:bg-accent/90 text-white py-6 rounded-lg">
+            {loginMutation.isPending ? "LOGGING IN..." : "LOGIN"}
             </Button>
           </form>
         </div>
