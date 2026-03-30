@@ -1,6 +1,8 @@
 import { AppSidebar } from "@/components/app-sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import logo from "@/assets/Ellipse 1.svg"
+import { cookies } from "next/headers";
+import { SESSION_COOKIE_NAME, verifySessionToken } from "@/lib/auth/session";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -18,11 +20,21 @@ import {
 
 import { BellDot } from 'lucide-react';
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const cookieStore = await cookies()
+  const sessionToken = cookieStore.get(SESSION_COOKIE_NAME)?.value
+  const session = sessionToken ? await verifySessionToken(sessionToken) : null
+
+  const [firstName, email, matric] = [
+    session?.firstName ?? "Student",
+    session?.email ?? "",
+    session?.matric ?? "",
+  ]
+
   return (
     <SidebarProvider >
       <AppSidebar />
@@ -40,7 +52,7 @@ export default function DashboardLayout({
                 <BreadcrumbItem className="hidden md:block">
                   
                   <div>
-                    <h1 className="text-[14px] text-secondary font-inter font-medium  ">Good Morning! Goodness</h1>
+                    <h1 className="text-[14px] text-secondary font-inter font-medium  ">Good Morning! {firstName}</h1>
                     <p className="text-black font-lex font-semibold text-[15px] ">Program</p>
                   </div>
                 </BreadcrumbItem>
@@ -70,8 +82,8 @@ export default function DashboardLayout({
                     </div>
 
                     <div>
-                        <h1 className="text-sm font-lex font-semibold text-black">softwareengineerjoycy@gmail.com</h1>
-                        <p className="text-sm font-light font-inter text-secondary">2021001710</p>
+                        <h1 className="text-sm font-lex font-semibold text-black">{email || 'No email'}</h1>
+                        <p className="text-sm font-light font-inter text-secondary">{matric || 'No matric number'}</p>
                     </div>
                   </div>
                 </BreadcrumbItem>

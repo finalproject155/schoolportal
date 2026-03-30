@@ -1,10 +1,17 @@
+"use client"
+
 import React from 'react'
 import logo from '@/assets/pngaaa.com-995389.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 export default function nav() {
+  const router = useRouter()
+  const handleLogin = () => {
+    router.push('/login')
+  } 
   return (
     <div className='w-full h-[100px] shadow bg-white flex flex-row justify-between items-center px-10 fixed top-0 z-50'>
         <div className="flex flex-row items-center justify-center gap-2 h-full">
@@ -27,7 +34,7 @@ export default function nav() {
 
                   <li>
 
-                     <Link href="/E-portal">
+                     <Link href="/login">
                         E-Portal   
                     </Link>
                 </li>
@@ -50,7 +57,7 @@ export default function nav() {
         </div>
 
         <div  className='flex flex-row gap-2'>
-           <Button variant="default" className='text-accent bg-transparent hover:bg-accent hover:text-white border-1 border-accent'>
+           <Button onClick={handleLogin} variant="default" className='text-accent bg-transparent hover:bg-accent hover:text-white border-1 border-accent'>
                 Login
            </Button>
 
