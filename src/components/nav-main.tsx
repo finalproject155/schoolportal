@@ -35,23 +35,21 @@ export function NavMain({
     <SidebarGroup>
       {/* <SidebarGroupLabel>Platform</SidebarGroupLabel> */}
 
-      <SidebarMenu className="py-10">
+      <SidebarMenu className="py-3 gap-1">
         {items.map((item) => {
           const isActive = pathname === item.url;
 
           return (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild className={`px-5 py-7`}>
+              <SidebarMenuButton asChild className="px-3 py-2.5">
                 <Link
                   className={`${isActiveClassLink(item.url)} hover:bg-accent hover:text-white`}
                   href={item.url}
                 >
                   {item.icon && (
-                    <item.icon className={` ${isActiveClassIcon(item.url)} `} />
+                    <item.icon size={17} className={isActiveClassIcon(item.url)} />
                   )}
-                  <span className=" font-light text-[16px] font-lex">
-                    {item.title}
-                  </span>
+                  <span className="text-sm font-lex">{item.title}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>

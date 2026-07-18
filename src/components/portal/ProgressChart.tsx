@@ -1,17 +1,20 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/utils";
 
-export function ProgressChart() {
+type Props = {
+  value?: number;
+  size?: number;
+};
+
+export function ProgressChart({ value = 75, size = 150 }: Props) {
   const [progress, setProgress] = React.useState(1);
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setProgress(75), 500);
+    const timer = setTimeout(() => setProgress(value), 500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [value]);
 
-  const size = 150;
   const strokeWidth = 15;
   const innerStroke = 8;
   const center = size / 2;

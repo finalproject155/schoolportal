@@ -36,7 +36,7 @@ export default function CourseCard({ course, selected, onToggle, disabled }: Pro
           className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
             course.type === "Compulsory"
               ? "bg-[#D42C24]/10 text-[#D42C24]"
-              : "bg-blue-50 text-blue-600"
+              : "bg-[#6E7485]/10 text-[#6E7485]"
           }`}
         >
           {course.type}

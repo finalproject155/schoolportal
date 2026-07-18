@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/sidebar"
 
 import { BellDot } from 'lucide-react';
+import SOSButton from "@/components/portal/SOSButton";
 
 export default async function DashboardLayout({
   children,
@@ -99,6 +100,8 @@ export default async function DashboardLayout({
         <div className="flex bg-[#B2B37721] flex-1 flex-col gap-4 p-4 pt-0">
           {children}
         </div>
+
+        <SOSButton />
       </SidebarInset>
     </SidebarProvider>
   )

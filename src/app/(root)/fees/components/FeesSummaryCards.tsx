@@ -21,9 +21,9 @@ const cards = [
     value: "₦300,000",
     sub: "2 payments made",
     icon: CheckCircle2,
-    iconBg: "bg-green-50",
-    iconColor: "text-green-600",
-    border: "border-l-green-500",
+    iconBg: "bg-emerald-50",
+    iconColor: "text-emerald-600",
+    border: "border-l-emerald-500",
   },
   {
     label: "Outstanding Balance",

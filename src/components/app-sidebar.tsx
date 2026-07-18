@@ -2,15 +2,22 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
   BookOpen,
-  Command,
-  GalleryVerticalEnd,
-  SquareTerminal,
  LayoutDashboard,
     BookOpenCheck,
     ReceiptText,
     Calendar,
+    UserRound,
+    GraduationCap,
+    FileStack,
+    ShieldCheck,
+    IdCard,
+    Library,
+    BedDouble,
+    Trophy,
+    Briefcase,
+    ShieldAlert,
+    Handshake,
 
 } from "lucide-react"
 
@@ -51,10 +58,16 @@ const data = {
     },
 
 
+      {
+      title: "My Program",
+      url: "/program",
+      icon: GraduationCap,
+    },
+
 
       {
-      title: "Grades",
-      url: "#",
+      title: "Results & GPA",
+      url: "/results",
       icon: BookOpenCheck,
     },
 
@@ -70,30 +83,93 @@ const data = {
 
 
       {
-      title: "Calendar",
-      url: "#",
+      title: "Timetable",
+      url: "/timetable",
       icon: Calendar,
     },
 
 
 
       {
-      title: "Swies",
-      url: "#",
-      icon: SquareTerminal,
+      title: "Transcript",
+      url: "/transcript",
+      icon: FileStack,
     },
-  
+
+
+      {
+      title: "Clearance",
+      url: "/clearance",
+      icon: ShieldCheck,
+    },
+
+
+      {
+      title: "ID Card",
+      url: "/id-card",
+      icon: IdCard,
+    },
+
+
+      {
+      title: "E-Library",
+      url: "/library",
+      icon: Library,
+    },
+
+
+      {
+      title: "Hostel",
+      url: "/hostel",
+      icon: BedDouble,
+    },
+
+
+      {
+      title: "Sports",
+      url: "/sports",
+      icon: Trophy,
+    },
+
+
+      {
+      title: "IT Registration",
+      url: "/it-registration",
+      icon: Briefcase,
+    },
+
+
+      {
+      title: "Placement Finder",
+      url: "/placement",
+      icon: Handshake,
+    },
+
+
+      {
+      title: "Security / SOS",
+      url: "/sos",
+      icon: ShieldAlert,
+    },
+
+
+      {
+      title: "Profile",
+      url: "/profile",
+      icon: UserRound,
+    },
+
   ]
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
+      <SidebarHeader className="py-3">
         {/* <TeamSwitcher teams={data.teams} /> */}
 
        <div className="flex flex-row items-center justify-center">
-         <Image src={ logo} alt="Logo" width={100} height={100} />
+         <Image src={ logo} alt="Logo" width={56} height={56} />
        </div>
 
       </SidebarHeader>

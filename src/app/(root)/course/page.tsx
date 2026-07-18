@@ -211,7 +211,7 @@ export default function CoursePage() {
                     </span>
                   )}
                   {totalUnits >= UNIT_MIN && (
-                    <span className="text-xs text-green-600 flex items-center gap-1">
+                    <span className="text-xs text-emerald-600 flex items-center gap-1">
                       <CheckCircle2 size={12} /> Valid load
                     </span>
                   )}
@@ -282,13 +282,13 @@ export default function CoursePage() {
         {phase === "submitted" && (
           <>
             {/* Success Banner */}
-            <div className="bg-green-50 border border-green-200 rounded-xl px-5 py-4 flex items-start gap-4">
-              <div className="bg-green-100 rounded-full p-2 shrink-0 mt-0.5">
-                <CheckCircle2 size={20} className="text-green-600" />
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl px-5 py-4 flex items-start gap-4">
+              <div className="bg-emerald-100 rounded-full p-2 shrink-0 mt-0.5">
+                <CheckCircle2 size={20} className="text-emerald-600" />
               </div>
               <div className="flex-1">
-                <h3 className="text-sm font-bold text-green-800">Registration Successful!</h3>
-                <p className="text-sm text-green-700 mt-0.5">
+                <h3 className="text-sm font-bold text-emerald-800">Registration Successful!</h3>
+                <p className="text-sm text-emerald-700 mt-0.5">
                   You have successfully registered <strong>{selectedCourses.length} courses</strong> totalling{" "}
                   <strong>{totalUnits} units</strong> for the 2024/2025 2nd Semester.
                 </p>
@@ -346,7 +346,7 @@ export default function CoursePage() {
                             className={`text-[10px] font-bold uppercase px-2 py-0.5 rounded-full ${
                               course.type === "Compulsory"
                                 ? "bg-[#D42C24]/10 text-[#D42C24]"
-                                : "bg-blue-50 text-blue-600"
+                                : "bg-[#6E7485]/10 text-[#6E7485]"
                             }`}
                           >
                             {course.type}
