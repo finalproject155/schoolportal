@@ -13,7 +13,7 @@ type StudentCredentialMailParams = {
   matric: string
   password: string
 }
-
+  
 export async function sendStudentCredentialMail({
   email,
   fullName,

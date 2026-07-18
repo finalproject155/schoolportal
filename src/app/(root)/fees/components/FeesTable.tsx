@@ -83,7 +83,7 @@ const previousFees: FeeItem[] = [
 const statusConfig = {
   PAID: {
     label: "Paid",
-    classes: "bg-green-50 text-green-700 border border-green-200",
+    classes: "bg-emerald-50 text-emerald-700 border border-emerald-200",
   },
   UNPAID: {
     label: "Unpaid",
@@ -339,8 +339,8 @@ function PaymentModal({ fee, onClose }: PaymentModalProps) {
           {/* STEP 3 – Success */}
           {step === 3 && (
             <div className="flex flex-col items-center text-center py-4">
-              <div className="bg-green-50 rounded-full p-5 mb-4 animate-[scale-in_0.4s_ease-out]">
-                <CheckCircle2 size={48} className="text-green-500" />
+              <div className="bg-emerald-50 rounded-full p-5 mb-4 animate-[scale-in_0.4s_ease-out]">
+                <CheckCircle2 size={48} className="text-emerald-500" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 font-lex mb-1">
                 Payment Successful!
@@ -353,7 +353,7 @@ function PaymentModal({ fee, onClose }: PaymentModalProps) {
               <div className="bg-gray-50 rounded-xl px-5 py-4 w-full mb-5 text-left space-y-2">
                 <div className="flex justify-between">
                   <span className="text-xs text-gray-500">Amount Paid</span>
-                  <span className="text-sm font-bold text-green-600">
+                  <span className="text-sm font-bold text-emerald-600">
                     {fee.amount}
                   </span>
                 </div>

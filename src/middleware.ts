@@ -20,5 +20,22 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/course/:path*', '/fees/:path*'],
+  matcher: [
+    '/dashboard/:path*',
+    '/course/:path*',
+    '/fees/:path*',
+    '/profile/:path*',
+    '/results/:path*',
+    '/timetable/:path*',
+    '/program/:path*',
+    '/transcript/:path*',
+    '/clearance/:path*',
+    '/id-card/:path*',
+    '/library/:path*',
+    '/hostel/:path*',
+    '/sports/:path*',
+    '/it-registration/:path*',
+    '/sos/:path*',
+    '/placement/:path*',
+  ],
 }

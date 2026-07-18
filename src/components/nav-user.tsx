@@ -8,6 +8,7 @@ import {
   LogOut,
   Sparkles,
 } from "lucide-react"
+import Link from "next/link"
 
 import {
   Avatar,
@@ -81,9 +82,11 @@ export function NavUser({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
-                <Sparkles className="text-white" />
-                Profile
+              <DropdownMenuItem asChild>
+                <Link href="/profile">
+                  <Sparkles className="text-white" />
+                  Profile
+                </Link>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
