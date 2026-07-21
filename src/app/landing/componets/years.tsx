@@ -6,16 +6,12 @@ import fet from "@/assets/years/juj.svg"
 import fat from "@/assets/years/kik.svg"
 import fed from "@/assets/years/njn.svg"
 import frt from "@/assets/years/yre.svg"
-import { div } from "framer-motion/client"
 
 const items = [
   { id: 1, title: "Expert Educators", img: fet, number: "300+" },
   { id: 2, title: "Job Placement", img: fat, number: "200+" },
   { id: 3, title: "Learning Resources", img: fed, number: "150+" },
-   { id: 4, title: "Learners Served", img: frt, number: "100+" },
-   { id: 4, title: "Learners Served", img: frt, number: "100+" },
- 
- 
+  { id: 4, title: "Learners Served", img: frt, number: "10,000+" },
 ]
 
 export default function Years() {
@@ -23,15 +19,15 @@ export default function Years() {
   <div className="bg-gradient-to-r from-accent to-primary">
       <section className="py-10">
 
-          <div className='flex flex-col items-center justify-center py-10'>
-            <h2 className="text-2xl text-white font-bold mb-4">WU Over The Years </h2>
-            <p className="text-white">eiusmod tempor incididunt ut labore et dolore.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div className='flex flex-col items-center justify-center py-10 text-center px-4'>
+            <h2 className="text-2xl text-white font-bold mb-4">LAUTECH Over The Years </h2>
+            <p className="text-white max-w-xl">Decades of academic excellence, producing graduates who go on to lead in their fields.</p>
         </div>
 
       <div className="max-w-6xl mx-auto">
-      
 
-        <div className="grid grid-cols-1 sm:grid-cols-5  gap-10 max-w-ful mx-auto">
+
+        <div className="grid grid-cols-2 sm:grid-cols-4  gap-10 max-w-ful mx-auto">
           {items.map((item) => (
             <motion.div
               key={item.id}
