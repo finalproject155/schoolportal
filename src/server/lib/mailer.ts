@@ -65,3 +65,62 @@ export async function sendStudentCredentialMail({
     }
   }
 }
+
+type LecturerCredentialMailParams = {
+  email: string
+  fullName: string
+  staffId: string
+  password: string
+}
+
+export async function sendLecturerCredentialMail({
+  email,
+  fullName,
+  staffId,
+  password,
+}: LecturerCredentialMailParams) {
+  if (!hasSmtpConfig) {
+    return {
+      sent: false,
+      error: 'SMTP is not configured. Add SMTP_* values to your environment.',
+    }
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 15000,
+    requireTLS: smtpPort === 587,
+    auth: {
+      user: smtpUser,
+      pass: smtpPass,
+    },
+  })
+
+  try {
+    await transporter.sendMail({
+      from: smtpFrom,
+      to: email,
+      subject: 'Your Lecturer Portal Login Details',
+      text: `Hello ${fullName},\n\nYour lecturer account has been created successfully.\n\nStaff ID: ${staffId}\nPassword: ${password}\n\nPlease log in and change your password immediately after first login.\n\nRegards,\nSchool Portal Admin`,
+      html: `
+        <p>Hello <strong>${fullName}</strong>,</p>
+        <p>Your lecturer account has been created successfully.</p>
+        <p><strong>Staff ID:</strong> ${staffId}<br/><strong>Password:</strong> ${password}</p>
+        <p>Please log in and change your password immediately after first login.</p>
+        <p>Regards,<br/>School Portal Admin</p>
+      `,
+    })
+
+    return { sent: true as const }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Failed to send email.'
+    return {
+      sent: false,
+      error: message,
+    }
+  }
+}

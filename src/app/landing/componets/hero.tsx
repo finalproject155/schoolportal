@@ -15,16 +15,12 @@ const Hero = () => {
             <span className="text-accent">Stress</span>
           </h1>
           <p className="text-lg text-secondary max-w-xl leading-relaxed">
-            Vendora helps students and teachers stay connected by organizing lessons, grades, announcements, and academic records in one simple dashboard.
+            LAUTECH E-Portal helps students and lecturers stay connected by organizing lessons, grades, announcements, and academic records in one simple dashboard.
           </p>
           <div className="flex flex-col sm:flex-row gap-2 lg:gap-3 mt-4">
-            {/* <button className="btn-primary flex items-center justify-center font-bold text-base transition-all transform hover:scale-105">
-              Request a Demo
-            </button> */}
             <button className="flex items-center justify-center h-[46px] px-6 rounded-lg border border-border bg-accent text-foreground  font-bold text-white hover:bg-white hover:text-accent hover:border-accent transition-colors">
-             
               Apply Now
-               <CircleArrowRight className="mr-2 text-xl" />
+              <CircleArrowRight className="ml-2 text-xl" />
             </button>
           </div>
           <div className="flex items-center gap-4 mt-6 text-sm text-muted">
@@ -54,7 +50,7 @@ const Hero = () => {
                 }}
               ></div>
             </div>
-            <p>Trusted by 500+ local stores</p>
+            <p>Trusted by 500+ students and lecturers</p>
           </div>
         </div>
 

@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import { FacultyDepartmentSelect } from "@/components/faculty-department-select"
 import { type CreateStudentPayload } from "@/services/admin-student.service"
 import { useCreateStudentMutation } from "@/hooks/queries/useCreateStudentMutation"
 
@@ -93,8 +94,7 @@ export default function AddStudentPage() {
 
         <Input required name="matric" placeholder="Matric Number" />
         <Input required name="programme" placeholder="Programme" />
-        <Input required name="department" placeholder="Department" />
-        <Input required name="faculty" placeholder="Faculty" />
+        <FacultyDepartmentSelect />
 
         <select required name="level" className="border-input h-9 w-full rounded-md border bg-transparent px-3 text-sm">
           <option value="">Select Level</option>

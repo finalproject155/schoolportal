@@ -7,6 +7,7 @@ type SessionPayload = {
   firstName: string
   email: string
   matric: string
+  role?: string
 }
 
 function getJwtSecret() {
@@ -40,6 +41,7 @@ export async function verifySessionToken(token: string) {
       firstName: String(payload.firstName ?? ''),
       email: String(payload.email ?? ''),
       matric: String(payload.matric ?? ''),
+      role: payload.role ? String(payload.role) : 'student',
     }
   } catch {
     return null
